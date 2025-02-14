@@ -192,6 +192,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', '<C-n>', '<Cmd>Neotree<CR>', { desc = 'Open Neotree' })
+vim.keymap.set('n', '<C-q>', '<Cmd>q<CR>', { desc = 'Close focused window' })
+vim.keymap.set('n', '<C-S-q>', '<Cmd>q!<CR>', { desc = 'Force close focused window' })
+vim.keymap.set('n', '<C-x>', '<Cmd>w<CR>', { desc = 'Write changes' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -781,7 +786,7 @@ require('lazy').setup({
         -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert {
           -- Select the [n]ext item
-          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-o>'] = cmp.mapping.select_next_item(),
           -- Select the [p]revious item
           ['<C-p>'] = cmp.mapping.select_prev_item(),
 
